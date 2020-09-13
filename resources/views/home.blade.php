@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <img src=" p" alt="">
-                <div class="card-header">
+                <div class="card-header" style="background-color:lightgrey">
                     Hi {{ Auth::user()->name }}, feeling musical today?
                 </div>
                 <div class="card-body" style="">
@@ -21,8 +21,8 @@
         </div>
 
         <div class="col-md-8">
-            <div class="card">
-            <div class="card-header">{{ Auth::user()->name }}'s Melody Diary</div>
+            <div class="card" style="margin-top:10px;">
+            <div class="card-header" style="background-color:lightgrey">{{ Auth::user()->name }}'s Melody Diary</div>
                 <div class="card-body" style="">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -33,7 +33,10 @@
                         @foreach ($userMelodies as $melody)
                         <li>
                             <h4><span style="font-family: 'Pacifico', cursive;">{{ $melody->name }}</span></h4> <br>
-                            <p> {{ $melody->caption }} </p>
+                            <p> {{ $melody->caption }} </p> <br>
+                            <h5><span style="color:blue;">Melody: </span></h5> 
+                            <p>{{ $melody->encoding }}</p> <br>
+                            <p>{{ strval($melody->created_at) }}</p>
                         </li>
                         @endforeach
                     </ul>
@@ -42,8 +45,8 @@
             </div>
         </div>
         <div class="col-md-8">
-            <div class="card">
-            <div class="card-header">Explore more melodies!</div>
+            <div class="card" style="margin-top: 10px;">
+            <div class="card-header" style="background-color:lightgrey">Explore more melodies!</div>
                 <div class="card-body" style="">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

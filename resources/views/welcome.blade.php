@@ -14,7 +14,7 @@
                            In addition, we manipulated the Markov Model to convey specific emotions through analyzing chord progressions, beats, and tempo of existing compositions that have been scientifically proven to convey that emotion. 
                            Limitations are set based on basic music theory concepts.</p>
 						<ul class="actions">
-							<li><a href="http://algorhythm.online/?fbclid=IwAR2KfETPYdN8Pfe6V7sujhaE7vdp9zc-vj6UpeLX8bkxN9AomfcVR1dzSXs" class="button big">Melodify your thoughts now!</a></li>
+							<li><a href="http://algorhythm.online/?fbclid=IwAR2KfETPYdN8Pfe6V7sujhaE7vdp9zc-vj6UpeLX8bkxN9AomfcVR1dzSXs" class="button big">Check out our melody generator, <span style="font-weight:bold;">Algorhythm</span> here!</a></li> 
 						</ul>
 					</section>
 
