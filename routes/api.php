@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/', "MelodyController@insert");
+Route::get('/melodies', "MelodyController@index");

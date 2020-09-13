@@ -16,7 +16,7 @@ class MelodyController extends Controller
      */
     public function index()
     {
-        //
+        return Melody::all();
     }
 
     /**
@@ -42,6 +42,9 @@ class MelodyController extends Controller
         
         if (isset($melody->encoding) && isset($melody->name) && isset($melody->caption) && isset($melody->user_id)) {
             $response = $melody->save();
+            if ($response == 1) {
+                return 'successful';
+            }
         }
 
         if (is_null(Auth::user())) {
