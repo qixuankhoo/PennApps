@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Melody extends Model
 {
@@ -10,4 +11,7 @@ class Melody extends Model
 
     public $table = 'melodies';
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

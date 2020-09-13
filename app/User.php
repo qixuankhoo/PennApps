@@ -39,6 +39,6 @@ class User extends Authenticatable
     ];
 
     public function melodies() {
-        return $this->belongsToMany(Melody::class);
+        return $this->hasMany(Melody::class, 'user_id');
     }
 }

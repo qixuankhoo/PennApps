@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Melody;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MelodyController extends Controller
 {
@@ -28,14 +29,16 @@ class MelodyController extends Controller
         $melody = new Melody;
         $melody->name = $request->input('name');
         $melody->encoding = $request->input('encoding');
+        $melody->caption = $request->input('caption');
+        $user = User::where('name',$request->input('username'))->first();
+        $melody->user_id = $user->id;
         $response = $melody->save();
 
-        $user = User::where('name',$request->input('username'))->first();
-        $user->melodies()->attach($melody->id);
-
-        if ($response == 1) {
-            return 'Melody is successfully stored.';
+        if (is_null(Auth::user())) {
+            return view('welcome');
         }
+
+        return view('home');
     }
 
     /**
