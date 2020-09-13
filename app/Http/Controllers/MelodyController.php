@@ -26,13 +26,23 @@ class MelodyController extends Controller
      */
     public function insert(Request $request) 
     {
+        $validated = $request->validate([
+            'name' => 'required',
+            'encoding' => 'required',
+            'username' => 'required',
+            'caption' => 'required',
+        ]);
+
         $melody = new Melody;
         $melody->name = $request->input('name');
         $melody->encoding = $request->input('encoding');
         $melody->caption = $request->input('caption');
         $user = User::where('name',$request->input('username'))->first();
         $melody->user_id = $user->id;
-        $response = $melody->save();
+        
+        if (isset($melody->encoding) && isset($melody->name) && isset($melody->caption) && isset($melody->user_id)) {
+            $response = $melody->save();
+        }
 
         if (is_null(Auth::user())) {
             return view('welcome');
