@@ -7,7 +7,7 @@
             <div class="card">
                 <img src=" p" alt="">
                 <div class="card-header" style="background-color:lightgrey">
-                    Hi {{ Auth::user()->name }}, feeling musical today?
+                    Hi {{ Auth::user()->name }}, feeling musical today??
                 </div>
                 <div class="card-body" style="">
                     @if (session('status'))
